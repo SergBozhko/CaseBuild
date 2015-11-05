@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-color: #e8e8e8;
+  background-color: #efefef;
   font-family: "Roboto", Helvetica, 'PT Sans', sans-serif;
 }
 
@@ -46,13 +46,15 @@ $contentInPad: 0 20px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;  
+  background-position: 50% 50%;
+  position: relative;
 }
 .content-area {
   max-width: $contentWidth;
   padding: $contentInPad;
   display: block;
   margin: 0 auto;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -66,33 +68,50 @@ a {
 /* Variables */
 $titleColor: #000;
 $contentColor: #fff;
+$byydBuildTitle: #7a142e;
 $mainWeight: 300;
 $titleWeight: 700;
 $titleSize: 54px;
 $titleSizeBig: 66px;
-$blockBgColor: #e8e8e8;
+$blockBgColor: #efefef;
 $mainSize: 16px;
 $blockTSize: 18px;
 $inputColor: rgba(159, 215, 255, 0.6);
 $inputColorActive: rgb(159, 215, 255);
+$mainZ: 30;
+
+@mixin flex {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
 
 @mixin trText {
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
+@mixin trStandart {
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
 /* ------------------------------ */
 
 #main-header {
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;  
   width: 100%;
   background-color: $blockBgColor;
   overflow: hidden;
-  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
 }
 #main-nav {
   float: left;
@@ -184,4 +203,547 @@ $inputColorActive: rgb(159, 215, 255);
 .mobile-overlay-active {
   opacity: 1;
   visibility: visible;
+}
+
+.b-button {
+  font-size: 36px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-transform: lowercase;
+  border: 4px solid #fff;
+  display: block;
+  width: 300px;
+  max-width: 100%;
+
+  @include trStandart;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  };
+}
+
+/* === BYYD BUILD ===*/
+.byyd-build {
+  margin-top: 60px;
+  background-image: url(../images/byyd-build.jpg);
+  z-index: $mainZ;
+}
+.byyd-build-mans {
+  position: absolute;
+  left: -300px;
+  bottom: 0;
+}
+.byyd-build-content-spot {
+  text-align: right;
+  float: right;
+  position: relative;
+  z-index: 10;
+  width: 47%;
+}
+.byyd-logo {
+  width: 100%;
+  margin: 150px 0 60px 0;
+}
+.byyd-build-title {
+  color: $byydBuildTitle;
+  padding: 0 0 28px 0;
+  border-bottom: 2px solid #777261;
+  font-weight: $mainWeight;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: 200px 0 32px 0;
+}
+.byyd-build-text {
+  width: 72%;
+  font-weight: 300;
+  font-size: 22px;
+  color: #363636;
+  float: right;
+}
+
+/* === BYYD IS === */
+$borderColor: #a4a4a4;
+
+.byyd-is {
+  background-color: #f4f4f4;
+  background-image: url(../images/byyd-is-pattern.png);
+  background-repeat: repeat;
+  padding: 200px 0;
+  background-size: auto;
+  z-index: $mainZ;
+}
+.byyd-is-list {
+  li {
+    float: left;
+    width: 33.3333%;
+    border: 1px solid $borderColor;
+    box-shadow: inset 0 0 1px 0 $borderColor;
+    padding: 28px;
+  }
+}
+
+/* === BYYD WALLPAPER === */
+.byyd-wallpaper {
+  background-image: url(../images/byyd-wallpaper.jpg);  
+  background-attachment: fixed;
+  height: 700px;
+  z-index: $mainZ;
+}
+
+/* === BYYD IMPRESSIVE === */
+.byyd-impressive {
+  background-image: url(../images/byyd-impressive.png);
+  min-height: 900px;
+  margin-bottom: -235px;
+  z-index: $mainZ;
+
+  .content-area {
+    overflow: hidden;
+  }
+}
+.block-title {
+  margin-top: 130px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #242424;
+}
+.block-text {
+  margin-top: 40px;
+  font-weight: 300;
+  font-size: 28px;
+  color: #474747;
+  max-width: 700px;
+}
+
+/* === BYYD TARGETS === */
+.byyd-targets {
+  background-image: url(../images/byyd-targets-bg.jpg);
+  background-attachment: fixed;
+  z-index: 5;
+  min-height: 100%;
+
+  .content-area {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    right: 0;
+  }
+}
+.byyd-targets-rombs-bg {
+  position: fixed;
+  background: url(../images/target-rombs.png) no-repeat center;
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+}
+
+/* Romb targets */
+.romb-targets {
+  position: relative;
+  height: 100%;
+  bottom: -263%;
+}
+.romb-target-wrap {
+  background-image: url(../images/target-romb.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;  
+}
+.rt-w-1 {
+  width: 35%;
+  left: 0;
+  top: 10%;
+}
+.rt-w-2 {
+  top: -5%;
+  width: 30%;
+  right: 12%;
+}
+.rt-w-3 {
+  top: 0;
+  width: 60%;
+  left: 0;
+  right: -3%;
+  bottom: 0;
+  margin: auto;
+}
+.rt-w-4 {
+  bottom: 20%;
+  width: 20%;
+  left: 0;
+}
+.rt-w-5 {
+  bottom: -6%;
+  width: 30%;
+  left: 14%;
+}
+.rt-w-6 {
+  bottom: 10%;
+  width: 30%;
+  right: 4%;
+}
+.rt-w-7 {
+  top: 30%;
+  width: 20%;
+  right: 0;
+}
+.rt-w-8 {
+  bottom: -5%;
+  width: 20%;
+  right: 29%;
+}
+
+/* === BYYD GEO === */
+.byyd-geo {
+  background-image: url(../images/geo.png);
+  height: 920px;
+  margin-top: -264px;
+  z-index: $mainZ;
+  overflow: hidden;
+
+  .block-title {
+    font-size: 48px;
+    color: #4e4e4e;
+    margin-top: 390px;
+  }
+  .block-text {
+    font-size: 24px;
+    font-weight: 300;
+    color: #4e4e4e;
+    max-width: 500px;
+
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}
+
+/* === BYYD CLIENTS === */
+.byyd-clients {
+  background-image: url(../images/byyd-clients.jpg);
+  height: 900px;
+  padding-bottom: 200px;
+  z-index: $mainZ;
+  @include flex;
+}
+.clients-title {
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 12px #000;
+}
+.byyd-clients-list {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include flex;
+}
+.clients-press {
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* === BYYD WORKS === */
+.byyd-works {
+  background-image: url(../images/byyd-works.png);
+  padding-top: 290px;
+  height: 1080px;
+  margin-top: -290px;
+  z-index: $mainZ;
+}
+.works-title {
+  text-align: center;
+  font-size: 48px;
+  color: #5e5e5e;
+  margin-top: 60px;
+}
+
+.byyd-works-spot {
+  margin-left: 44px;
+  margin-top: 140px;
+}
+.work-list-block {
+  float: left;
+  width: 25%;
+  display: block;
+  border: 1px solid #9f9f9f;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.48);
+  transform: rotate(45deg);
+  margin-right: 10%;
+  overflow: hidden;
+  position: relative;  
+
+  &:last-child {
+    margin-right: 0;
+  };
+
+  &:before {
+    -webkit-transform: rotate(-45deg) scale(1);
+    -ms-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+    @include trStandart;
+  };
+
+  &:hover {
+    &:before {
+    -webkit-transform: rotate(-45deg) scale(1.1);
+    -ms-transform: rotate(-45deg) scale(1.1);
+    transform: rotate(-45deg) scale(1.1);    
+    }    
+  }  
+}
+.wlb-1 {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -20%;
+    left: -25%;
+    z-index: 0;
+    background: url(../images/byyd-work-1.jpg) 0 0 no-repeat;
+    background-size: cover;
+  };
+}
+.wlb-2 {
+  z-index: 10;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -20%;
+    left: -25%;
+    z-index: 10;
+    background: url(../images/byyd-work-2.jpg) 0 0 no-repeat;
+    background-size: cover;
+  };
+}
+.wlb-3 {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -20%;
+    left: -25%;
+    z-index: 0;
+    background: url(../images/byyd-work-3.jpg) 0 0 no-repeat;
+    background-size: cover;
+  };
+}
+.work-img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+
+.work-block {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: rotate(-45deg);
+  text-align: center;
+  top: -200%;
+  left: -200%;
+  width: 150%;
+  height: 150%;
+  opacity: 1;
+
+  .work-block-text {
+    margin: 0 auto;
+    padding-top: 20px;
+
+    a {
+      font-weight: $mainWeight;
+      color: #484848;
+      font-size: 24px;
+
+      .work-block-title {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #484848;
+      }
+    }
+  }
+
+  &:hover {
+  };
+
+  @include flex;
+  @include trText;
+}
+.work-list-block:hover .work-block {
+  top: -25%;
+  left: -25%;
+}
+
+/* === BYYD BONUS TITLE === */
+.byyd-bonus-title {
+  padding: 20px 0;
+  z-index: $mainZ+1;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.33);
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#464545+0,7c797b+100 */
+  background: #464545; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ2NDU0NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3Yzc5N2IiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left,  #464545 0%, #7c797b 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#464545), color-stop(100%,#7c797b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #464545 0%,#7c797b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #464545 0%,#7c797b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #464545 0%,#7c797b 100%); /* IE10+ */
+  background: linear-gradient(to right,  #464545 0%,#7c797b 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#464545', endColorstr='#7c797b',GradientType=1 ); /* IE6-8 */
+}
+.block-s-tite, .block-s-text {
+  text-align: center;
+  color: #fff;
+}
+.block-s-tite {
+  font-size: 48px;
+}
+.block-s-text {
+  font-size: 36px;
+  font-weight: $mainWeight;
+}
+
+/* === BYYD BONUS IMAGE === */
+.byyd-bonus-img {
+  background-image: url(../images/byyd-bonus-img-bg.jpg);
+  z-index: $mainZ;
+
+  .content-area {
+    overflow: hidden;
+  }
+}
+.bonus-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 320px;
+}
+
+/* === BYYD CONTACTS === */
+.byyd-contacts {
+  background-color: #fff;
+  padding: 40px 0;
+  z-index: $mainZ;
+}
+.contacts-title {
+  text-align: center;
+  color: #383838;
+  font-size: 48px;
+}
+.contacts-spot {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+.contacts-left, .contacts-right {
+  width: 50%;
+}
+.contacts-left {
+  float: left;
+  padding-right: 60px;
+}
+.contacts-right {
+  float: right;
+}
+.contacts-text {
+  font-size: 24px;
+  color: #3e3e3e;
+}
+.contacts-list {
+  margin-top: 20px;
+
+  li {
+    float: none;
+
+    .cl-cont {
+      color: #444444;
+      font-size: 20px;
+      line-height: 20px;
+      padding: 10px 0 10px 60px;
+      position: relative;
+    }
+  }
+}
+[class*=c-list-cont-]:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.c-list-cont-1:before {
+  background-image: url(../images/contact-img-1.png);
+}
+.c-list-cont-2:before {
+  background-image: url(../images/contact-img-2.png);
+}
+.c-list-cont-3:before {
+  background-image: url(../images/contact-img-3.png);
+}
+.c-list-cont-4:before {
+  background-image: url(../images/contact-img-4.png);
+}
+
+#contacts-form {
+  textarea {
+    margin-top: 40px;
+    border: 2px solid #000;
+    width: 100%;
+    &::-webkit-input-placeholder {color: #404040;}
+    &::-moz-placeholder          {color: #404040;}/* Firefox 19+ */
+    &:-moz-placeholder           {color: #404040;}/* Firefox 18- */
+    &:-ms-input-placeholder      {color: #404040;}
+    padding: 10px;
+    color: #404040;
+    font-size: 18px;
+    outline-style: none;
+    min-height: 100px;
+  }
+}
+.byyd-input {
+  padding: 10px 0;
+  color: #404040;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #000;
+  width: 100%;
+  outline-style: none;
+
+  &::-webkit-input-placeholder {color: #404040;}
+  &::-moz-placeholder          {color: #404040;}/* Firefox 19+ */
+  &:-moz-placeholder           {color: #404040;}/* Firefox 18- */
+  &:-ms-input-placeholder      {color: #404040;}
+}
+.form-sbm {
+  float: right;
+  font-size: 18px;
+  max-width: 200px;
+  border: 2px solid #000;
+  margin-top: 20px;
+  background-color: transparent;
+  color: #404040;
+  outline-style: none;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+  };
 }
