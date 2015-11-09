@@ -263,6 +263,9 @@ $mainZ: 30;
   color: #363636;
   float: right;
 }
+.woman-mobile {
+  display: none;
+}
 
 /* === BYYD IS === */
 $borderColor: #a4a4a4;
@@ -370,6 +373,9 @@ $borderColor: #a4a4a4;
   right: 0;
   bottom: 0;  
 }
+.targets-img-mobile {
+  display: none;
+}
 
 /* Romb targets */
 .romb-targets {
@@ -402,6 +408,11 @@ $borderColor: #a4a4a4;
   right: -3%;
   bottom: 0;
   margin: auto;
+
+  img {
+    position: relative;
+    left: -37px;
+  }
 }
 .rt-w-4 {
   bottom: 20%;
@@ -445,27 +456,11 @@ $borderColor: #a4a4a4;
   padding-top: 20px;
 }
 
-/* Rombs mobile */
-.romb-target-item-mob {
-  background: url(../images/target-romb.png) no-repeat center;
-  background-size: contain;
-  height: 260px;
-  width: 260px;
-  margin: 0 auto;
-  @include flex;
-
-  img {
-    margin: 0 auto;
-    display: block;
-    width: 60%;
-  }
-}
-
 /* === BYYD GEO === */
 .byyd-geo {
   background-image: url(../images/geo.png);
-  height: 920px;
-  margin-top: -264px;
+  height: 963px;
+  margin-top: -306px;
   z-index: $mainZ;
   overflow: hidden;
 
@@ -478,7 +473,6 @@ $borderColor: #a4a4a4;
     font-size: 24px;
     font-weight: 300;
     color: #4e4e4e;
-    max-width: 500px;
 
     span {
       text-transform: uppercase;
@@ -509,6 +503,20 @@ $borderColor: #a4a4a4;
 .clients-press {
   margin: 0 auto;
   margin-top: 40px;
+}
+.byyd-clients-list-mobile {
+  display: none;
+}
+.byyd-works-spot-mobile {
+    display: none;
+    margin-top: 20px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+      max-height: 200px;
+    }
 }
 
 /* === BYYD WORKS === */
@@ -699,6 +707,9 @@ $bZval: 15;
     width: 100%;
     right: 0;
   }
+}
+.bonus-mobile-version, .mobile-dark-mask {
+  display: none;
 }
 
 .bonus-phone {
@@ -979,9 +990,328 @@ $mapHeight: 500px;
   width: 100%; 
 }
 
+/*==============================================================
+                            КЕЙСЫ                           
+================================================================*/
+
+/* === CASE LOGO === */
+.case-logo {
+  min-height: 100%;
+  background-image: url(../images/case-block-logo.jpg);
+}
+
+/* === CASE DESCRIPTION === */
+/* C-DESC-TOP */
+.c-desc-top {
+  background-color: #fff;
+  padding: 40px 0;
+}
+.c-desk-top-title {
+  text-align: center;
+  color: #202020;
+  font-size: 33px;
+  font-weight: 300;
+}
+.c-desc-text-area {
+  margin-top: 20px;
+  width: 60%;
+}
+.c-desk-text-row {
+  @extend .clearfix;
+}
+.c-desc-text-block {
+  text-align: left;
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+  padding-left: 30px;
+
+  &:first-child {
+    padding-left: 0;
+  };
+}
+.cdt-title {
+  color: #59829c;
+  font-size: 28px;
+  padding-left: 20px;
+}
+.cdt-content {
+  color: #4c4c4c;
+  font-size: 20px;
+}
+
+/* C-DESC-BOTTOM */
+.c-desk-bottom {
+  background-color: #c1dfec;
+  padding: 40px 0;
+  position: relative;
+}
+.c-desc-b-title {
+  color: #3e3e3e;
+  font-weight: 300;
+  font-size: 33px;
+  padding-left: 20px;
+}
+.c-desc-text-row {
+  margin-top: 20px;
+  color: #555555;
+  font-size: 20px;
+}
+.c-desc-text-line {
+    width: 80%;
+    margin-top: 20px;
+}
+.desc-image {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 30%;
+}
+
+/* === CASE WALLPAPER AREA === */
+.wallpaper-sb {
+  min-height: 100%;
+  background-image: url(../images/wallpaper-sb.jpg);
+  background-attachment: fixed;
+}
+.case-corner-blue {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.case-corner-yellow {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* === CASE GEO MAP === */
+.geo-map {
+  background-color: #f6dd9c;
+}
+.geo-map-title {
+  text-align: center;
+  color: #000;
+  font-weight: 300;
+  font-size: 33px;
+}
+.geo-map-img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === CASE DEVISES === */
+.case-devises {
+  background-image: url(../images/case-devises-bg.jpg);
+  padding: 40px 0;
+}
+.case-devises-title {
+  text-align: center;
+  color: #fff;
+  font-size: 33px;
+  font-weight: 300;
+}
+/* Devises stats */
+$textShadow: 0 1px 5px #000;
+.devises-stats-title {
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.toyota-b-l-devises {
+  overflow: hidden;
+}
+.toyota-stats-note {
+  background: url(../images/toyota-stats-note.png) no-repeat center;
+  background-size: contain;
+  line-height: 144px;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  text-align: center;
+  width: 110px;
+  height: 144px;
+}
+.toyota-stats-phone {
+  float: left;  
+  margin-left: 20px;
+
+  img {
+    margin-top: 56px;
+  }
+}
+.stats-phone-percent {
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  padding: 112px 0 0 14px;
+}
+.toyota-stats-oss {
+  margin-top: 50px;
+}
+.toyota-stats-oss-item {
+  overflow: hidden;
+
+  span {
+    line-height: 62px;
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+.toyota-stats-oss {
+  .toyota-stats-oss-item {
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: $textShadow;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.stats-os-img {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #00f9ff;
+  background-color: #00537e;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  float: left;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+}
+.os-img-1 {
+  background-image: url(../images/toyota-stats-android.png);
+}
+.os-img-2 {
+  background-image: url(../images/toyota-stats-win.png);
+}
+.os-img-3 {
+  background-image: url(../images/toyota-stats-mac.png);
+}
+.stats-os-progress {
+  width: 164px;
+  height: 24px;
+  margin: 19px 0 0 -6px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px #fff;
+  float: left;
+}
+.stats-progress-value {
+  height: 24px;
+  border: 1px solid #00f9ff;
+  border-right: 4px solid #14999C;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000b0c+0,007c7f+26,00f0f7+100 */
+  background: #000b0c; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMGIwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI2JSIgc3RvcC1jb2xvcj0iIzAwN2M3ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGYwZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left,  #000b0c 0%, #007c7f 26%, #00f0f7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000b0c), color-stop(26%,#007c7f), color-stop(100%,#00f0f7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* IE10+ */
+  background: linear-gradient(to right,  #000b0c 0%,#007c7f 26%,#00f0f7 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000b0c', endColorstr='#00f0f7',GradientType=1 ); /* IE6-8 */
+}
+.os-item-1 {
+  .stats-progress-value {
+    width: 72%;
+  }
+}
+.os-item-2 {
+  .stats-progress-value {
+    width: 20%;
+  }
+}
+.os-item-3 {
+  .stats-progress-value {
+    width: 8%;
+  }
+}
+
+/* === CASE SCREENS === */
+.case-screens {
+  background-image: url(../images/case-screens-bg.jpg);
+  padding: 40px 0;
+}
+.case-screens-title {
+  text-align: center;
+  font-size: 33px;
+  color: #353535;
+  font-weight: 300;
+}
+.screens-container {
+  margin-top: 40px;
+}
+.case-screens-item {
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+
+  &:last-child {
+    margin-right: 0;
+  };
+}
+
 /*===============================================================
                         MOBILE VERSION
 ================================================================*/
+@media only screen and (max-width: 1220px),
+only screen and (max-device-width: 1220px) {
+  /* === BYYD BONUS === */ 
+  .byyd-bonus {
+    .content-area {
+      overflow: hidden;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px),
+only screen and (max-device-width: 1024px) {
+  /* === BYYD TARGETS === */
+  .romb-target-text {
+    padding-top: 10px;
+  }
+  .romb-target-text {
+    font-size: 13px;
+  }
+  .romb-target-img {
+    max-width: 30%;
+  }
+  .rt-w-3 img {
+    left: -17px;
+  }
+
+  /* === BYYD CLIENTS === */
+  .clients-p-line {
+    padding: 20px 0;
+  }
+  .byyd-clients {
+    height: auto;
+    padding-top: 40px;
+  }
+  .byyd-clients-list {
+    display: block;
+    text-align: center;
+  }
+  .byyd-clients-list {
+    img {
+      width: 25%;
+    }
+  }  
+}
+
 @media only screen and (max-width: 736px),
 only screen and (max-device-width: 736px) {
 
@@ -993,9 +1323,15 @@ only screen and (max-device-width: 736px) {
     padding: 40px 0;
     min-height: auto;
     height: auto;
+
+    .content-area {
+      display: block;
+    }    
   }
   .byyd-build-content-spot {
-    padding-left: 0;    
+    padding-left: 0;
+    overflow: hidden;
+    float: none;  
   }
   .byyd-build-title {
     font-size: $mobileTitle;
@@ -1009,6 +1345,12 @@ only screen and (max-device-width: 736px) {
   .byyd-build-mans {
     display: none;
   }
+  .woman-mobile {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 20px auto -40px auto;
+    display: block;
+  }
 
   /* === BYYD LOGO ===*/
   .byyd-is-block {
@@ -1019,9 +1361,13 @@ only screen and (max-device-width: 736px) {
   }
   .byyd-is-list li {
     float: none;
-    width: 100%;
+    width: 70%;
     padding: 0;
+    margin: 0 auto;
     margin-bottom: 20px;
+  }
+  .byyd-is-block-img {
+    height: 36px;
   }
 
   /* === BYYD WALLPAPER ===*/
@@ -1031,7 +1377,7 @@ only screen and (max-device-width: 736px) {
 
   /* === BYYD IMPRESSIVE ===*/
   .byyd-impressive {
-    padding: 40px;
+    padding: 40px 20px;
     margin: 0;
     min-height: auto;
     background: url(../images/byyd-impressive-mobile.png) no-repeat center;
@@ -1056,15 +1402,24 @@ only screen and (max-device-width: 736px) {
   .byyd-targets .content-area {
     position: static;
     height: auto;
+    padding: 20px;
   }
   .byyd-targets-rombs-bg {
     display: none;
+  }
+  .romb-targets {
+    display: none;
+  }
+  .targets-img-mobile {
+    display: block;
+    margin: 0 auto;
+    max-height: 680px;
   }
 
   /* === BYYD GEO ===*/
   .byyd-geo {
     height: auto;
-    padding: 40px;
+    padding: 40px 20px;
     background-image: url(../images/geo-mobile.png);
     margin: 0;
   }
@@ -1081,7 +1436,11 @@ only screen and (max-device-width: 736px) {
   /* === BYYD CLIENTS ===*/
   .byyd-clients {
     height: auto;
-    padding: 40px 0;
+    padding: 40px 0 100px 0;
+
+    .content-area {
+      overflow: hidden;
+    }
   }
   .clients-title {
     text-align: center;
@@ -1102,12 +1461,43 @@ only screen and (max-device-width: 736px) {
     max-width: 60%;
     font-size: $mobileFSize;
   }
+  .byyd-clients-list {
+    display: none;
+  }
+  .byyd-clients-list-mobile {
+    display: block;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .slick-slide {
+    outline-style: none;
+    position: relative;
+    height: 200px;
+  }
+  .slick-prev, .slick-next {
+    display: none !important;
+  }
+
+  .byyd-works-spot {
+    display: none;
+  }
+  .byyd-works-spot-mobile {
+    display: block;
+  }
 
   /* === BYYD WORKS ===*/
   .byyd-works {
-    background: #84b3c6;
-    margin: 0;
-    padding: 40px 0;
+    background: url(../images/works-mobile-bg.png) no-repeat top;
+    background-size: cover;
+    margin-top: -90px;
+    padding: 130px 0 40px 0;
     height: auto;
   }
   .works-title {
@@ -1125,6 +1515,50 @@ only screen and (max-device-width: 736px) {
   }
   .block-s-text {
     font-size: $mobileFSize;
+  }
+
+  /* === BYYD BONUS ===*/
+  .bonus-mobile-version {
+    display: block;
+    padding: 40px 0;
+  }
+  .byyd-bonus {
+    min-height: auto;
+
+    .content-area {
+      position: static;
+    }
+  }
+  .bonus-mobile-text-block {
+    max-width: 362px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 4px #000;
+  }
+  .bonus-img-mobile {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-height: 360px;
+  }
+  .mobile-dark-mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .bonus-circles, .bonus-bg-cloud, .bonus-icon,
+  .bonus-phone, .bonus-text-cloud {
+    display: none;
   }
 
   /* === BYYD CONTACTS ===*/

@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
-    <title>CaseBuild</title>
+    <title>BYYD • Кейс (недвижимость)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,6 +12,8 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick-theme.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -72,7 +74,8 @@
           <div class="byyd-build-text">Новые возможности продвижения недвижимости с помощью 
           мобильной рекламы
           </div>          
-        </div>        
+        </div>
+        <img src="images/byyd-build-mans.png" alt="" class="woman-mobile">      
       </section>
     </section>
 
@@ -197,40 +200,7 @@
             </div>
           </div>
         </div>
-        <div class="romb-targets-mobile">
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-1.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-2.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-3.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-4.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-5.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-6.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-7.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-          <div class="romb-target-item-mob">
-            <img src="images/romb-target-img-8.png" alt="">
-            <div class="romb-t-m-text"></div>
-          </div>
-        </div>
+        <img src="images/targets-img-mobile.png" alt="" class="targets-img-mobile">
       </section>
     </section>
 
@@ -259,12 +229,19 @@
         <div class="byyd-clients-list">
           <img src="images/client-wb.png" alt="">
           <img src="images/client-wf.png" alt="">
-          <img src="images/client-tc.png" alt="">
-          <img src="images/client-rb.png" alt="">
+          <img src="images/client-tc.png" class="clients-p-line" alt="">
+          <img src="images/client-rb.png" class="clients-p-line" alt="">
           <img src="images/client-wd.png" alt="">
         </div>
+        <div class="byyd-clients-list-mobile">
+          <div><img src="images/client-wb.png" alt=""></div>
+          <div><img src="images/client-wf.png" alt=""></div>
+          <div><img src="images/client-tc.png" alt=""></div>
+          <div><img src="images/client-rb.png" alt=""></div>
+          <div><img src="images/client-wd.png" alt=""></div>
+        </div>
         <div class="clients-title">Хотите с нами сотрудничать?</div>
-        <a href="#" class="b-button clients-press">Нажмите сюда</a>  
+        <a href="#contacts-mark" class="b-button clients-press anchor">Нажмите сюда</a>  
       </section>
     </section>
 
@@ -294,6 +271,11 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="byyd-works-spot-mobile clearfix">
+          <a href="#"><img src="images/work-mobile-1.png" alt=""></a>
+          <a href="#"><img src="images/work-mobile-2.png" alt=""></a>
+          <a href="#"><img src="images/work-mobile-3.png" alt=""></a>
         </div>
       </section>
     </section>
@@ -342,6 +324,23 @@
         <img src="images/bi-4.png" alt="" class="bonus-icon bi-4">
         <img src="images/bi-5.png" alt="" class="bonus-icon bi-5">
         <img src="images/bi-6.png" alt="" class="bonus-icon bi-6">
+
+        <div class="bonus-mobile-version">
+          <div class="bonus-mobile-text-block">
+            - бесплатное создание всех креативов и лендинга
+          </div>
+          <div class="bonus-mobile-text-block">
+            - клиентский сервис на всех этапах кампании
+          </div>
+          <div class="bonus-mobile-text-block">
+            - по итогам вы получите крутую посткампейн-презентацию с описанием и результатами кампании
+          </div>
+          <div class="bonus-mobile-text-block">
+            - регулярная оптимизация кампании на основе фактических показателей
+          </div>
+          <img src="images/bonus-img-mobile.png" class="bonus-img-mobile" alt="">
+        </div>
+        <div class="mobile-dark-mask"></div>
       </section>
     </section>
 
@@ -353,7 +352,7 @@
     </section>
 
     <!-- BYYD CONTACTS 13 block -->
-    <section class="block-wrapper byyd-contacts">
+    <section class="block-wrapper byyd-contacts" id="contacts-mark">
       <section class="content-area clearfix">
         <div class="contacts-title">Контакты</div>
         <div class="contacts-spot clearfix">
@@ -409,6 +408,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

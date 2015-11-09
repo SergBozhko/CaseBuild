@@ -72,6 +72,25 @@ $(function() {
 	var $wBlock = $('.work-list-block');
 	setH($wBlock);
 
+	// Slick slider init
+	$('.byyd-clients-list-mobile').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  autoplay: true,
+	  autoplaySpeed: 2000,
+	});
+
+	// Easy anchor
+	$('.anchor').click(function(e) {
+		e.preventDefault();
+
+		var anchorId = $(this).attr('href'),
+			anchorTarget = $(anchorId).offset().top;
+		console.log('Scrolled to $(' + anchorId + ')');
+
+		$('body, html').animate({scrollTop: anchorTarget}, 500);
+	});
+
 	// Window actions
 	$(window).resize(function() {
 		setH($wBlock);
