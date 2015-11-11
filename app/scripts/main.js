@@ -11,13 +11,15 @@ function setEach (target) {
 // Parallax
 function parallax (target, value) {
 	target.css({
-		'transform' : 'translate(0%, ' + value + '%'
+		'transform' : 'translate(0%, ' + value + '%)',
+		'-webkit-transform' : '-webkit-translate(0%, ' + value + '%)'
 	});
 }
 // Parallax mouse
 function pMouse (target, sensX, sensY) {
 	target.css({
-		'transform' : 'translate(' + sensX + '%, ' + sensY + '%)'
+		'transform' : 'translate(' + sensX + '%, ' + sensY + '%)',
+		'-webkit-transform' : '-webkit-translate(' + sensX + '%, ' + sensY + '%)'
 	});
 };
 
@@ -68,6 +70,23 @@ $(function() {
         pMouse($bic3, -pOfsetX/100, 0);
     });
 
+    // Menu trigger
+    var $menuTrigger = $('.main-menu-trigger, .menu-overlay, .menu-close'),
+    	$triggerWrap = $('.menu-trigger-wrap'),
+    	$menuArea = $('#main-header'),
+    	$menuOverlay = $('.menu-overlay');
+
+    function menuActivation() {
+    	$triggerWrap.toggleClass('mtw-active');
+    	$menuArea.toggleClass('header-active');
+    	$menuOverlay.toggleClass('menu-overlay-active');
+    }
+    $menuTrigger.click(function(e) {
+    	e.preventDefault();
+
+    	menuActivation();
+    });
+
 	// Our works blocks width
 	var $wBlock = $('.work-list-block');
 	setH($wBlock);
@@ -79,10 +98,20 @@ $(function() {
 	  autoplay: true,
 	  autoplaySpeed: 2000,
 	});
+	$('.byyd-clients-list').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  autoplay: true,
+	  autoplaySpeed: 6000,
+	});
 
 	// Easy anchor
 	$('.anchor').click(function(e) {
 		e.preventDefault();
+
+		if($triggerWrap.hasClass('mtw-active')) {
+			menuActivation();
+		}
 
 		var anchorId = $(this).attr('href'),
 			anchorTarget = $(anchorId).offset().top;
