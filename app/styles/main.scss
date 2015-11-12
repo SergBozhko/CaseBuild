@@ -587,13 +587,36 @@ $borderColor: #a4a4a4;
   outline-style: none;
 }
 .clients-big-slide {
-  max-width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 .slick-next {
-  right: -18px;
+  right: 15px;
+  z-index: 50;  
+
+  &:before {
+    content: '';
+    background: url(../images/slide-left.png) no-repeat center;
+    background-size: contain;
+    height: 50px;
+    width: 55px;
+    display: block;
+    @include trText;
+  };
 }
 .slick-prev {
-  left: -18px;
+  left: 2px;
+  z-index: 50;
+
+  &:before {
+    content: '';
+    background: url(../images/slide-right.png) no-repeat center;
+    background-size: contain;
+    height: 50px;
+    width: 55px;
+    display: block;
+    @include trText;
+  };
 }
 
 /* === BYYD WORKS === */
